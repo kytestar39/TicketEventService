@@ -1,0 +1,13 @@
+package com.raluca.requests;
+import java.awt.PageAttributes.MediaType;
+@Path("/EventService") 
+
+public class UserService {  
+   EventDao eventDao = new EventDao();  
+   @GET 
+   @Path("/event") 
+   @Produces(MediaType.APPLICATION_XML) 
+   public String getEvents(){ 
+      return EventDao.getAllEvents(String event); 
+   }  
+}

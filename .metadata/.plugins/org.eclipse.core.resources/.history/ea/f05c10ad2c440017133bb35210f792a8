@@ -1,0 +1,73 @@
+
+.center{
+	width: 100%;
+	margin:0 auto;
+	display: inline-block;
+}
+
+
+
+.dropDownMenu a {
+	color: #FFF;
+}
+.dropDownMenu,
+.dropDownMenu ul {
+	width: auto;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.dropDownMenu li {
+	position: relative;
+}
+.dropDownMenu a {
+	padding: 10px 20px;
+	display: block;
+	text-decoration: none;
+    font-size: 17px;
+    font-style: italic;
+    font-family: Rockwell, sans-serif;
+    background-color: #f37422;
+    color: #26180e;
+}
+.dropDownMenu a:hover {
+	background-color: #d1661f; 
+}
+
+
+/* Level 1 Drop Down Menu */
+.dropDownMenu > li {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: -4px; /* solve the 4 pixels spacing between list-items */
+}
+.dropDownMenu > li:first-child {
+	margin-left: 0;
+}
+.dropDownMenu > li > a {}
+.dropDownMenu > li > a:hover {}
+
+
+
+/* Level 2 */
+.dropDownMenu > li > ul {
+	text-align: left;
+	width: 220px; /* change auto value with 200px if you want a bigger menu */
+	display: none;
+	background: #5DBB04;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 9999999; /* if you have YouTube iframes, is good to have a bigger z-index so the video can appear above the video */
+}
+.dropDownMenu > li:hover > ul {
+	display: block;
+}
+.dropDownMenu ul li a {}
+.dropDownMenu ul li a:hover {}
+
+
+
+.dropDownMenu ul ul li {}
+.dropDownMenu ul ul li a {}
+.dropDownMenu ul ul li a:hover {}

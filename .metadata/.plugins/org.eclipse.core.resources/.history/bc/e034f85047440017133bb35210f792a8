@@ -1,0 +1,72 @@
+package com.raluca.requests;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+
+@Path("/event")
+public class EventService {
+	//the database
+	private static String[][] events = {
+			{"Rock","Event1","Event2"},
+			{"Pop","Event3","Event4"},
+			{"Metal","Metal1","Metal2"},
+			{"HipHop","HipHop1","HipHop2"},
+			{"TeatruCopii","Teatru1","Teatru2"},
+			{"StandUp","Teo","Costel"},
+			{"Spectacol","Bla1","Bla2"},
+			{"Sport","Folbal","Tenis"}
+	};
+	private static String[][] eventDetails ={
+		{"Event1","Acesta este un concert rock tinut in arenele romanel","90"},
+		{"Event2","Concert rock tinut de trupa Iris","40"},
+		{"Event3","Beyonce vine la Iasi!","200"},
+		{"Event4","Trupa Sistem cand la Hangariada","50"},
+		{"Metal1","Linkin Park canta pe 20 decambrie in club Sky", "100"},
+		{"Metal2","Trupa AC/DC ajunge in Bucureste pe 12 ianuarie sa-si intalneasca fanii","50"},
+		{"HipHop1","Vescan cand in club bamboo","100"},
+		{"HipHop2","Vescan cand in club bamboo","100"},
+		{"Teatru1","Teatrul luceafarul gazduieste teatru de papusi","100"},
+		{"Teatru2","Teatru luceafarul gazduieste O scrisoare pierduta","100"},
+		{"Teo","Teo vine la iasi la teatru luceafarul","100"},
+		{"Costel","Costel vine la iasi la teatru luceafarul","100"}
+	};
+	      
+	                        
+	                        
+			
+			
+	@GET
+	@Path("/{param}")
+	public static Response getMsg(@PathParam("param") String msg) {
+
+		String[] output = null;
+		for(int i=0; i<events.length;i++){
+			if(events[i][0].equals(msg))
+			{
+				output = events[i];
+			}
+			
+		}
+		return Response.status(200).entity(output).build();
+
+	}
+	public static Response getMsgEvent(@PathParam("param") String msg) {
+
+		String[] output = null;
+		for(int i=0; i<eventDetails.length;i++){
+			if(eventDetails[i][0].equals(msg))
+			{
+				output = eventDetails[i];
+			}
+			
+		}
+		return Response.status(200).entity(output).build();
+
+	}
+
+}

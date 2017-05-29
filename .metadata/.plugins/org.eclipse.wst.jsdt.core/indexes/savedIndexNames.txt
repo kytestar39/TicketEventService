@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+D:\WORKSPACES\RaluApp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+130049657.index
+601509219.index
+1631339254.index
+1641938091.index
+1552737681.index

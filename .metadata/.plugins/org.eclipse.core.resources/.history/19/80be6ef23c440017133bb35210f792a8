@@ -1,0 +1,27 @@
+package com.raluca.requests;
+
+import java.util.HashMap;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+
+@Path("/event")
+public class EventService {
+	//the database
+	HashMap events = new Map(String, String);
+
+	hm.put("Rock", "Event1");
+	
+	@GET
+	@Path("/{param}")
+	public static Response getMsg(@PathParam("param") String msg) {
+
+		String output = "Jersey say : " + msg;
+
+		return Response.status(200).entity(output).build();
+
+	}
+
+}

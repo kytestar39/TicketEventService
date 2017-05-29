@@ -1,0 +1,39 @@
+package com.raluca.requests;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+
+@Path("/event")
+public class EventService {
+	//the database
+	private String[][] events = {
+			{"Rock","Event1","Event2"},
+			{"Pop","Event3","Event4"},
+			{"Metal","Metal1","Metal2"},
+			{"HipHop","HipHop1","HipHop2"},
+			{"TeatruCopii","Teatru1","Teatru2"},
+			{"Standup","Teo","Costel"},
+			{"Spectacole","Bla1","Bla2"},
+			{"Sport","Folbal","Tenis"}
+	};
+	      
+	                        
+	                        
+			
+			
+	@GET
+	@Path("/{param}")
+	public static Response getMsg(@PathParam("param") String msg) {
+
+		String output = "Jersey say : " + msg;
+
+		return Response.status(200).entity(output).build();
+
+	}
+
+}

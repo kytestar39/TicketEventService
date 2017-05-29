@@ -1,0 +1,52 @@
+package com.raluca.requests;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+
+public class PostRequest {
+	@POST
+	@Path("/{param}")
+	public static vsendpost(@PathParam("param") String msg) {
+		
+		
+
+public static Response getMsg(@PathParam("param") String msg) {
+
+	String[] output = null;
+	for(int i=0; i<events.length;i++){
+		if(events[i][0].equals(msg))
+		{
+			output = events[i];
+		}
+		
+	}
+	return Response.status(200).entity(output).build();
+
+}
+public static Response getMsgEvent(@PathParam("param") String msg) {
+
+	String[] output = null;
+	for(int i=0; i<eventDetails.length;i++){
+		if(eventDetails[i][0].equals(msg))
+		{
+			output = eventDetails[i];
+		}
+		
+	}
+	return Response.status(200).entity(output).build();
+
+}
+
+}
+
+}
